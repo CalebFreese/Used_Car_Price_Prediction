@@ -60,7 +60,7 @@ def write_to_interim(arr, file_path):
     with open(file_path, 'w', newline='') as file:
 
         #creates csv writer
-        writer = csv.write(file)
+        writer = csv.writer(file)
 
         #writes rows to csv file
         writer.writerows(arr)
