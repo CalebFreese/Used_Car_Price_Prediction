@@ -27,12 +27,12 @@ def house_values(file_name):
 #gets skewness
 def skew(arr):
     skewness = stats.skew(arr)
-    print("Skewness: " + skewness)
+    print("Skewness: %.2f", skewness)
 
 #gets kurtosis
 def kurtosis(arr):
     kurtosis = stats.kurtosis(arr)
-    print("Kurtosis: " + kurtosis)
+    print("Kurtosis: %.2f", kurtosis)
 
 
 
