@@ -26,7 +26,7 @@ def read_dataset_raw(file_path):
                 continue
             
             #iterate through index of row for better processing
-            for i in len(row):
+            for i in range(len(row)):
 
                 #checks if this is a row containing non numerical values and converts
                 if(((i >= 5) and (i <= 9)) or (i == 11)):
