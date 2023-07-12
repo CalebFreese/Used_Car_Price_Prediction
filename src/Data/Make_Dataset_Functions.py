@@ -2,6 +2,7 @@
 
 import csv
 import numpy as np
+from sklearn.model_selection import train_test_split
 
 #function to read the raw dataset
 def read_dataset_raw(file_path):
@@ -122,5 +123,57 @@ def write_to_processed(arr, file_path):
         #writes rows to csv file
         writer.writerows(arr)
 
+def read_processed(file_path):
 
+    #intialize output array
+    out_arr = []
+
+    #opens file
+    with open(file_path, 'r') as file:
+
+        #creates csv reader
+        reader = csv.reader(file)
+
+        #iterates through rows
+        for row in reader:
+
+            #iterate through values
+            for i in range(len(row)):
+
+                row[i] = int(row[i])
+            
+            out_arr.append(row)
+    
+    #return output array
+    return out_arr
+
+def test_train(arr):
+
+    #convert to numpy
+    arr = np.array(arr)
+
+    #gets attributes and outputs
+    y = arr[:, 0]
+    X = arr[:, 1:]
+
+    #Splits data
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+    #applies log transform to y_train
+    y_train = np.log(y_train)
+
+    #returns all
+    return X_train, X_test, y_train, y_test
+
+#writes prices to a single row
+def write_output(arr, file_path):
+
+    #opens new file as csv file
+        with open(file_path, 'w', newline='') as file:
+
+            #creates csv writer
+            writer = csv.writer(file)
+
+            #writes rows to csv file
+            writer.writerow(arr)
 
