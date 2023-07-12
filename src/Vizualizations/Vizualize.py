@@ -18,7 +18,7 @@ def house_values(file_name):
         for row in reader:
 
             #adds house value to array
-            out_arr.append(row[0])
+            out_arr.append(int(row[0]))
     
     #returns output array
     return out_arr
@@ -29,7 +29,10 @@ def skew(arr):
     skewness = stats.skew(arr)
     print("Skewness: " + skewness)
 
-
+#gets kurtosis
+def kurtosis(arr):
+    kurtosis = stats.kurtosis(arr)
+    print("Kurtosis: " + kurtosis)
 
 
 
