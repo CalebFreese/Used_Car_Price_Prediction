@@ -88,7 +88,7 @@ def kurtosis(arr):
     print(f"Kurtosis: {kurtosis:.2f}")
 
 #plots frequency of house values
-def plot_frequency(arr):
+def plot_frequency(arr, file_name):
 
     # Assuming you have the data of numbers from 0 to 100000
 
@@ -125,10 +125,13 @@ def plot_frequency(arr):
     plt.xlabel("Car Value")
     plt.ylabel("Frequency")
 
+    # Save the plot to a file
+    plt.savefig(file_name)
+
     # Display the plot
     plt.show()
 
-def correlation_heat_map(arr):
+def correlation_heat_map(arr, file_name):
 
     # Get the current working directory
     current_directory = os.getcwd()
@@ -160,14 +163,20 @@ def correlation_heat_map(arr):
     # Set the plot title
     plt.title("Correlation Heatmap of Features")
 
+    # Save the plot to a file
+    plt.savefig(file_name)
+
     # Display the plot
     plt.show()
 
 
 #create a scatter plot of two data sets
-def scatter(arr1, arr2):
+def scatter(arr1, arr2, file_name):
     plt.scatter(arr1, arr2)
     plt.xlabel("Actual Prices")
     plt.ylabel("Predicted Prices")
     plt.title("Comparison of Predicted Prices vs Actual Prices for Used Cars")
+
+    # Save the plot to a file
+    plt.savefig(file_name)
     plt.show()
