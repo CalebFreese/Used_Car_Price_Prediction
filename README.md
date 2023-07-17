@@ -8,13 +8,13 @@ This project aims to determine the price of used cars using various machine lear
 
 Frequency analysis is performed to understand the distribution of car prices in the dataset. The frequency analysis graph provides insights into the range and distribution of car prices, helping us understand the data's price distribution characteristics. The price was found to have a skewness of 3.02 and a kurtosis of 15.13, so a log transform was placed on the price so it would work better with the machine learning techniques.
 
-![Frequency Analysis Graph](placeholder_image_frequency_analysis.png)
+![Frequency Analysis Graph](Images/Frequency.png)
 
 ### Correlation Analysis
 
 Correlation analysis examines the relationships between the car price and other variables in the dataset. It helps identify which features have a significant impact on the price and determine the direction of their relationships (positive or negative correlation). Based on the correlation heat map below, the features abtest, model, monthOfRegistration, brand, and postalCode were removed from consideration. A log transform was placed on all continuous features.
 
-![Correlation Analysis Graph]('Images/Correlation.png')
+![Correlation Analysis Graph](Images/Correlation.png)
 
 ## Machine Learning Techniques
 
@@ -38,8 +38,18 @@ To evaluate the performance of these models, the root mean squared error (RMSE) 
 
 ## Predictions
 
-The predictions obtained from each machine learning technique are visualized by comparing them against the testing data. The graph below shows the predicted prices plotted against the actual prices from the testing dataset.
+The predictions obtained from each machine learning technique are visualized by comparing them against the testing data. The graph below shows the predicted prices plotted against the actual prices from the testing dataset. Note the linearity of the graph.
 
-### XGBoost Predictions vs Testing Data
+![XGBoost Predictions](Images/Scatter.png)
 
-![XGBoost Predictions](placeholder_image_xgboost_predictions.png)
+## Conclusion
+
+This project employed various exploratory techniques and machine learning algorithms to predict the prices of used cars. The exploratory data analysis provided valuable insights into the distribution of car prices and the relationships between the price and other variables in the dataset.
+
+Multiple machine learning techniques, including multiple linear regression, neural network, random forest, gradient boost, and XGBoost, were applied to predict the prices of the used cars. Each technique was evaluated based on the root mean squared error (RMSE) values, providing an understanding of their performance and accuracy in predicting car prices.
+
+Based on the results, the XGBoost algorithm achieved the lowest RMSE value, demonstrating superior predictive performance compared to the other techniques. This algorithm successfully captured complex relationships and provided more accurate price predictions for used cars.
+
+The visualizations comparing the predictions against the testing data revealed a strong linear relationship. The predicted prices closely aligned with the actual prices, forming a near-perfect diagonal line. This linearity suggests that the models effectively captured the underlying patterns and trends in the data, resulting in accurate price predictions.
+
+The observed linear relationship highlights the effectiveness of the machine learning models in capturing the price dynamics of used cars. The models successfully leveraged the input features to predict the prices, leading to reliable estimations.
